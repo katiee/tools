@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>舒尔特表 Schulte Grid</title>
+<style>
+ table,td{border:1px solid blue;}
+ table{width:500px; height:600px; margin:auto;}
+ td{font-size:200%;text-align:center;}
+</style>
+</head>
+<body>
+<p>
+<script language="javascript" type="text/javascript">
+	shuffle = function(o){ //v1.0
+		for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+		return o;
+	};
+
+	var n = 5;
+	var arr = new Array(n*n);
+	for(var i=1; i<=arr.length; i++) {
+		arr[i-1]=i;
+	}
+	shuffle(arr);
+
+	var str = "<table>";
+	for(var i=0; i<n; i++) {
+		str += "<tr>";
+		for(var j=0; j<n; j++){
+			str += "<td>"+ arr[i*n+j] +"</td>";
+		}
+		str += "</tr>";
+	}
+	str += "</table>";
+	document.write(str);
+</script>
+</body>
+</html>
